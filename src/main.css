@@ -1,0 +1,86 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+/* Примеры цветов для каждой секции */
+#section1 {
+    background-color: #2196f3;
+} /* Синий */
+#section2 {
+    background-color: #4caf50;
+} /* Зеленый */
+#section3 {
+    background-color: #ffc107;
+} /* Желтый */
+#section4 {
+    background-color: #f44336;
+} /* Красный */
+
+#section5 {
+    background-color: #2196f3;
+} /* Синий */
+#section6 {
+    background-color: #4caf50;
+} /* Зеленый */
+#section7 {
+    background-color: #ffc107;
+} /* Желтый */
+#section8 {
+    background-color: #f44336;
+} /* Красный */
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+.slider-track {
+    display: flex;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+}
+
+/* Стилизация кнопок */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}

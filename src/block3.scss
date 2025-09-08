@@ -1,0 +1,153 @@
+#section3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #171919;
+    position: relative;
+
+    .card {
+        overflow: hidden;
+        position: relative;
+        height: 37.5em;
+        max-height: 90vh;
+        align-self: center;
+        z-index: 2;
+        background-color: #1c2121;
+        cursor: pointer;
+
+        &:hover .card-bg {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        &:hover .card-view {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+
+    .card-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.3;
+        transition: transform 500ms ease, opacity 500ms ease;
+    }
+
+    .card-title {
+        position: absolute;
+        top: 1em;
+        left: 0.6em;
+        font-size: clamp(2em, 5vw, 4em);
+        font-weight: 800;
+        line-height: 1em;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 0.1em;
+        z-index: 2;
+
+        span {
+            order: 1;
+            font-size: 0.6em;
+            line-height: 1em;
+            color: #fff;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background-image: repeating-linear-gradient(
+            to right,
+            transparent,
+            transparent clamp(4em, 12vw, 8.4em),
+            rgba($color: #fff, $alpha: 0.1) clamp(4em, 12vw, 8.4em),
+            rgba($color: #fff, $alpha: 0.1) calc(clamp(4em, 12vw, 8.4em) + 1px)
+        );
+        background-size: calc(clamp(4em, 12vw, 8.4em) * 3) 100%;
+        background-position: left top;
+        z-index: 1;
+    }
+
+    .crd1 {
+        transform: scale(1.07);
+        transform-origin: left top;
+
+        .card-bg {
+            object-position: 60%;
+        }
+    }
+
+    .crd2 {
+        transform: scale(1.07);
+        transform-origin: center bottom;
+
+        .card-bg {
+            object-position: 68%;
+        }
+    }
+
+    .crd3 {
+        transform: scale(1.07) translateY(5%);
+        transform-origin: center top;
+
+        .card-bg {
+            object-position: 30%;
+        }
+    }
+
+    .crd4 {
+        transform: scale(1.07) translateY(-5%);
+        transform-origin: right top;
+
+        .card-bg {
+            object-position: 65%;
+        }
+    }
+
+    .card-label {
+        z-index: 3;
+        position: absolute;
+        transform: translateX(20%) rotate(-90deg) translateX(30%);
+        transform-origin: bottom left;
+        bottom: 0;
+        color: #fff;
+        font-size: 0.9em;
+        letter-spacing: 0.4em;
+    }
+
+    .card-view {
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        scale: 0;
+        opacity: 0;
+        transform-origin: bottom center;
+        transition: scale 300ms ease, opacity 300ms ease;
+
+        > span {
+            font-size: 2em;
+            font-weight: 800;
+            line-height: 1em;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0.425em;
+
+            &:last-child {
+                background-color: #4af6cd;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+    }
+}
